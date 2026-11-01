@@ -1,7 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 :root{--bg:#100d12;--panel:rgba(25,20,27,.88);--line:rgba(236,220,225,.13);--text:#f4edf0;--muted:#b6aab1;--red:#bd4b58;--gold:#d7b78c;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Manrope',Arial,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}
-.backdrop{position:fixed;inset:0;z-index:-3;background:linear-gradient(90deg,rgba(13,10,15,.96) 0%,rgba(16,12,17,.82) 50%,rgba(15,10,16,.76) 100%),radial-gradient(ellipse at 75% 25%,#50303b 0%,transparent 42%),linear-gradient(135deg,#21151e,#0c0a0f 70%);background-position:center;background-size:cover;transition:background-image .3s}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(13, 10, 15, 0.88) 0%,
+      rgba(16, 12, 17, 0.72) 50%,
+      rgba(15, 10, 16, 0.65) 100%
+    ),
+    url("images/fox-background.jpg");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .ambient{position:fixed;z-index:-2;width:420px;height:420px;border-radius:50%;filter:blur(120px);opacity:.13;pointer-events:none}.ambient-one{background:#a92d48;top:20%;right:-200px}.ambient-two{background:#6b4567;bottom:0;left:-250px}
 .topbar{height:86px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:rgba(13,10,15,.55);backdrop-filter:blur(16px);position:sticky;top:0;z-index:10}
 .brand{display:flex;align-items:center;gap:12px;color:var(--text);text-decoration:none}.brand-mark{font-family:var(--serif);font-size:35px;color:var(--red);line-height:1}.brand b{display:block;font-size:12px;letter-spacing:3px}.brand small{display:block;color:var(--muted);font-size:8px;letter-spacing:2px;margin-top:4px}
