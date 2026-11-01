@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100d12">
+  <title>Отряд Лисов — Система повышения</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="backdrop" id="backdrop"></div>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Отряд Лисов — главная">
+      <span class="brand-mark">狐</span>
+      <span><b>ОТРЯД ЛИСОВ</b><small>ПУТЬ ХИТРОСТИ И КРОВИ</small></span>
+    </a>
+    <nav>
+      <a href="#ranks">Ранги</a>
+      <a href="#lore">Лор отряда</a>
+      <a href="#rules">Порядок повышения</a>
+    </nav>
+    <label class="upload-button" for="background-upload" title="Установить своё фото на фон">
+      <span>＋</span> Фон
+    </label>
+    <input id="background-upload" type="file" accept="image/*" hidden>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> СИСТЕМА РАНГОВ · ДЕМОНИЧЕСКИЙ ОТРЯД</div>
+        <h1>ПУТЬ<br><em>ЛИСА</em></h1>
+        <p class="hero-lead">Хитрость — наше оружие. Ловкость — наша природа. Кровь — наше искусство.</p>
+        <p class="hero-desc">Система повышения отряда Лисов. Изучай требования своего ранга, выполняй задания и доказывай, что достоин следующей ступени.</p>
+        <a class="primary-link" href="#ranks">Изучить ранги <span>↘</span></a>
+      </div>
+      <div class="hero-stamp" aria-hidden="true">
+        <div class="stamp-ring"></div>
+        <span>狐</span>
+        <small>FOX<br>CLAN</small>
+      </div>
+      <div class="hero-bottom"><span>01 / 09</span><span>ЛИСЬЯ ТРОПА</span><span>ПРОДВИГАЙСЯ ВЫШЕ</span></div>
+    </section>
+
+    <section class="section ranks-section" id="ranks">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span></span> ЛЕСТНИЦА СИЛЫ</div><h2>РАНГИ <em>ОТРЯДА</em></h2></div>
+        <p>Нажми на ранг, чтобы открыть его испытания. Отмечай выполненные пункты — прогресс сохранится в этом браузере.</p>
+      </div>
+      <div class="progress-panel">
+        <div class="progress-top"><span>ОБЩИЙ ПРОГРЕСС ОТМЕТОК</span><strong id="progress-label">0%</strong></div>
+        <div class="progress-track"><span id="progress-bar"></span></div>
+        <div class="progress-foot"><span id="progress-count">0 из 0 заданий отмечено</span><button id="reset-progress" type="button">Сбросить отметки</button></div>
+      </div>
+      <div class="rank-list" id="rank-list"></div>
+    </section>
+
+    <section class="section lore-section" id="lore">
+      <div class="lore-image">
+        <div class="lore-symbol">狐</div>
+        <span>НАСЛЕДИЕ ЛИСА</span>
+      </div>
+      <div class="lore-copy">
+        <div class="eyebrow"><span></span> ПРОИСХОЖДЕНИЕ</div>
+        <h2>КРОВЬ, ЧТО<br><em>ПОМНИТ ЛИСУ</em></h2>
+        <p>Когда-то бывший цугуко Дыхания Любви создал собственный стиль, вдохновлённый повадками лисы. Его дыхание унаследовало игривость, хитрость и стремительность этого зверя.</p>
+        <p>Став демоном, он дополнил своё искусство магией крови. Теперь лисья ловкость соединяется с обманчивыми приёмами и ледяными узорами, вдохновлёнными магией крови Доумы.</p>
+        <div class="lore-traits">
+          <div><b>01</b><span>ХИТРОСТЬ И ОБМАН</span></div>
+          <div><b>02</b><span>ЛОВКОСТЬ И СКОРОСТЬ</span></div>
+          <div><b>03</b><span>МАГИЯ КРОВИ</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rules-section" id="rules">
+      <div class="eyebrow"><span></span> ПЕРЕД ПОВЫШЕНИЕМ</div>
+      <h2>ПОРЯДОК <em>ИСПЫТАНИЙ</em></h2>
+      <div class="rules-grid">
+        <article><span>Ⅰ</span><h3>Подтверждай RP</h3><p>Задания, основанные на ролевых действиях, должны быть отыграны и подтверждены по правилам вашего проекта.</p></article>
+        <article><span>Ⅱ</span><h3>Соблюдай условия</h3><p>Если в пункте указано «ИЛИ», достаточно выполнить один из предложенных вариантов. Остальные пункты остаются обязательными.</p></article>
+        <article><span>Ⅲ</span><h3>Получи одобрение</h3><p>Там, где требуется разрешение руководства или Смотрящих Лун, повышение считается завершённым только после одобрения.</p></article>
+      </div>
+      <p class="notice">Важно: конкретные правила подтверждения, подсчёта урона и проведения RP определяются администрацией/руководством отряда.</p>
+    </section>
+  </main>
+
+  <footer><span class="brand-mark">狐</span><span>ОТРЯД ЛИСОВ</span><small>ХИТРОСТЬ В КАЖДОМ ДВИЖЕНИИ · СИЛА В КАЖДОЙ КАПЛЕ КРОВИ</small></footer>
+  <script src="script.js"></script>
+</body>
+</html>
