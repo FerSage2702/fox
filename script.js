@@ -343,3 +343,57 @@ document
 
     updateProgress();
   });
+
+/* ===== ПЕРЕЛИСТЫВАНИЕ КНИГИ ===== */
+
+const lorePages = [
+  ...document.querySelectorAll('.book-page')
+];
+
+const lorePrev = document.getElementById('lore-prev');
+const loreNext = document.getElementById('lore-next');
+const loreCurrent = document.getElementById('lore-current');
+const loreTotal = document.getElementById('lore-total');
+const loreDots = [
+  ...document.querySelectorAll('.book-dot')
+];
+
+let currentLorePage = 0;
+
+loreTotal.textContent = lorePages.length;
+
+function showLorePage(index) {
+  if (index < 0 || index >= lorePages.length) return;
+
+  currentLorePage = index;
+
+  lorePages.forEach((page, i) => {
+    page.classList.toggle('active', i === index);
+  });
+
+  loreDots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+
+  loreCurrent.textContent = index + 1;
+
+  lorePrev.disabled = index === 0;
+  loreNext.disabled = index === lorePages.length - 1;
+}
+
+lorePrev.addEventListener('click', () => {
+  showLorePage(currentLorePage - 1);
+});
+
+loreNext.addEventListener('click', () => {
+  showLorePage(currentLorePage + 1);
+});
+
+loreDots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    showLorePage(index);
+  });
+});
+
+showLorePage(0);
+
