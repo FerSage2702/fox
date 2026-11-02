@@ -1,387 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
-:root{--bg:#100d12;--panel:rgba(25,20,27,.88);--line:rgba(236,220,225,.13);--text:#f4edf0;--muted:#b6aab1;--red:#bd4b58;--gold:#d7b78c;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Manrope',Arial,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}
-
-.backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: -3;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(13, 10, 15, 0.88) 0%,
-      rgba(16, 12, 17, 0.72) 50%,
-      rgba(15, 10, 16, 0.65) 100%
-    ),
-    url("fox-background.jpg");
-
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-.lore-quote {
-  color: #d6a0a8;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-style: italic;
-  margin: 20px 0;
-}
-
-/* ===== КНИГА ЛИСЬИХ УГОДИЙ ===== */
-
-.lore-book-section {
-  display: block !important;
-  padding-top: 90px;
-  padding-bottom: 100px;
-}
-
-.book-heading {
-  text-align: center;
-  margin: 0 auto 42px;
-  max-width: 750px;
-}
-
-.book-heading .eyebrow {
-  justify-content: center;
-}
-
-.book-heading h2 {
-  margin: 14px 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(38px, 5vw, 58px);
-  letter-spacing: 2px;
-}
-
-.book-heading h2 em {
-  color: #c58b91;
-  font-style: normal;
-}
-
-.book-heading > p {
-  color: #aaa0a2;
-  font-size: 15px;
-}
-
-/* Переплёт */
-
-.book-shell {
-  position: relative;
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 24px;
-  border: 1px solid rgba(183, 125, 99, .55);
-  border-radius: 8px 16px 16px 8px;
-
-  background:
-    linear-gradient(110deg, #261319, #421c25 48%, #271218);
-
-  box-shadow:
-    0 25px 70px rgba(0, 0, 0, .55),
-    inset 5px 0 12px rgba(0, 0, 0, .5),
-    inset -2px 0 5px rgba(255, 220, 180, .08);
-}
-
-.book-shell::before {
-  content: "";
-  position: absolute;
-  left: 12px;
-  top: 12px;
-  bottom: 12px;
-  width: 5px;
-  border-radius: 4px;
-  background: linear-gradient(
-    90deg,
-    #10090c,
-    #8a4c4d,
-    #271218
-  );
-}
-
-.book-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 14px 18px 22px;
-  color: #d5a7a0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
-  letter-spacing: 3px;
-}
-
-.book-volume {
-  color: #9d7773;
-  font-size: 12px;
-}
-
-/* Страницы */
-
-.book-pages {
-  position: relative;
-  min-height: 650px;
-  padding: 48px 8%;
-  overflow: hidden;
-  border-radius: 3px;
-
-  background-color: #e8d9b9;
-  background-image:
-    radial-gradient(
-      ellipse at 15% 20%,
-      rgba(140, 91, 50, .12),
-      transparent 45%
-    ),
-    radial-gradient(
-      ellipse at 85% 80%,
-      rgba(140, 91, 50, .13),
-      transparent 45%
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 31px,
-      rgba(115, 86, 58, .08) 32px
-    );
-
-  box-shadow:
-    inset 0 0 35px rgba(94, 55, 29, .19),
-    0 4px 12px rgba(0, 0, 0, .3);
-}
-
-.book-page {
-  display: none;
-  max-width: 700px;
-  margin: 0 auto;
-  color: #35251f;
-  animation: pageAppear .45s ease;
-}
-
-.book-page.active {
-  display: block;
-}
-
-@keyframes pageAppear {
-  from {
-    opacity: 0;
-    transform: translateX(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.page-number {
-  text-align: right;
-  color: #94775b;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 19px;
-}
-
-.page-chapter {
-  margin-top: 15px;
-  color: #96634f;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 4px;
-  text-align: center;
-}
-
-.book-page h3 {
-  margin: 12px 0 30px;
-  color: #40251f;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(32px, 4vw, 43px);
-  font-weight: 700;
-  text-align: center;
-}
-
-.book-page p {
-  margin: 0 0 20px;
-  color: #403029;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 21px;
-  line-height: 1.8;
-  text-align: justify;
-}
-
-.book-page p strong {
-  color: #812f37;
-}
-
-.book-page .page-quote {
-  margin: 20px auto 30px;
-  color: #873c42;
-  font-size: 25px;
-  font-style: italic;
-  text-align: center;
-}
-
-.page-ending {
-  margin-top: 35px;
-  color: #a18166;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  text-align: center;
-}
-
-/* Финальная страница */
-
-.book-final {
-  margin: 40px auto;
-  padding: 25px 15px;
-  border-top: 1px solid rgba(112, 74, 52, .35);
-  border-bottom: 1px solid rgba(112, 74, 52, .35);
-  text-align: center;
-}
-
-.book-final > span {
-  display: block;
-  color: #8a333c;
-  font-size: 54px;
-  margin-bottom: 15px;
-}
-
-.book-final p {
-  color: #792e36;
-  font-size: 25px;
-  font-style: italic;
-  text-align: center;
-}
-
-.book-final small {
-  display: block;
-  max-width: 500px;
-  margin: 20px auto 0;
-  color: #795c4c;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 19px;
-  font-style: italic;
-  line-height: 1.6;
-}
-
-/* Управление страницами */
-
-.book-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  padding: 22px 12px 10px;
-}
-
-.book-button {
-  padding: 12px 20px;
-  border: 1px solid rgba(205, 151, 139, .45);
-  border-radius: 3px;
-  background: rgba(12, 7, 10, .25);
-  color: #e0b8b1;
-  font-family: 'Manrope', sans-serif;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  cursor: pointer;
-  transition: .25s;
-}
-
-.book-button:hover:not(:disabled) {
-  background: rgba(180, 92, 100, .25);
-  border-color: #c58b91;
-  color: #fff;
-}
-
-.book-button:disabled {
-  opacity: .3;
-  cursor: not-allowed;
-}
-
-.book-pagination {
-  color: #e0b8b1;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-}
-
-.pagination-divider {
-  margin: 0 8px;
-  color: #8f6464;
-}
-
-.book-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px 0 0;
-}
-
-.book-dot {
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  border: 1px solid #b17c7b;
-  border-radius: 50%;
-  background: transparent;
-  cursor: pointer;
-  transition: .2s;
-}
-
-.book-dot.active {
-  background: #d49a9c;
-  box-shadow: 0 0 10px rgba(212, 154, 156, .5);
-  transform: scale(1.3);
-}
-
-/* Мобильная версия */
-
-@media (max-width: 650px) {
-  .lore-book-section {
-    padding-top: 55px;
-  }
-
-  .book-shell {
-    padding: 13px;
-  }
-
-  .book-pages {
-    min-height: 720px;
-    padding: 30px 22px;
-  }
-
-  .book-page p {
-    font-size: 19px;
-    line-height: 1.7;
-  }
-
-  .book-page .page-quote {
-    font-size: 22px;
-  }
-
-  .book-bottom {
-    gap: 8px;
-  }
-
-  .book-button {
-    padding: 11px 10px;
-    font-size: 9px;
-    letter-spacing: 1px;
-  }
-
-  .book-top {
-    padding-left: 15px;
-    font-size: 12px;
-  }
-}
-
-
-.ambient{position:fixed;z-index:-2;width:420px;height:420px;border-radius:50%;filter:blur(120px);opacity:.13;pointer-events:none}.ambient-one{background:#a92d48;top:20%;right:-200px}.ambient-two{background:#6b4567;bottom:0;left:-250px}
-.topbar{height:86px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:rgba(13,10,15,.55);backdrop-filter:blur(16px);position:sticky;top:0;z-index:10}
-.brand{display:flex;align-items:center;gap:12px;color:var(--text);text-decoration:none}.brand-mark{font-family:var(--serif);font-size:35px;color:var(--red);line-height:1}.brand b{display:block;font-size:12px;letter-spacing:3px}.brand small{display:block;color:var(--muted);font-size:8px;letter-spacing:2px;margin-top:4px}
-nav{display:flex;gap:34px}nav a{color:#c9bdc3;text-decoration:none;font-size:11px;letter-spacing:1px;transition:.2s}nav a:hover{color:white}
-.upload-button{border:1px solid var(--line);padding:10px 15px;color:#e8dce1;font-size:10px;letter-spacing:1px;cursor:pointer}.upload-button span{color:var(--gold);font-size:16px;margin-right:5px}
-.hero{min-height:610px;padding:105px 12vw 30px;position:relative;display:flex;flex-direction:column;justify-content:center}.hero-copy{max-width:650px}.eyebrow{font-size:9px;letter-spacing:3px;color:var(--gold);display:flex;align-items:center;gap:10px}.eyebrow span{width:24px;height:1px;background:var(--red)}
-h1,h2{font-family:var(--serif);font-weight:600;letter-spacing:2px;line-height:.83;margin:27px 0}h1{font-size:clamp(76px,12vw,150px)}h1 em,h2 em{color:var(--red);font-style:normal}h2{font-size:clamp(45px,6vw,75px)}
-.hero-lead{font-size:15px;color:#eadde2;max-width:490px;line-height:1.8}.hero-desc{font-size:12px;color:var(--muted);line-height:1.9;max-width:440px;margin:20px 0 30px}
-.primary-link{display:inline-flex;gap:32px;align-items:center;padding:15px 20px;background:var(--red);color:white;text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:.2s}.primary-link:hover{background:#d05c68;transform:translateY(-2px)}.primary-link span{font-size:18px}
 .hero-stamp{position:absolute;right:15%;top:24%;width:220px;height:220px;border:1px solid rgba(215,183,140,.22);border-radius:50%;display:grid;place-items:center;color:rgba(215,183,140,.6)}.hero-stamp>span{font-family:var(--serif);font-size:100px}.stamp-ring{position:absolute;inset:13px;border:1px solid rgba(215,183,140,.2);border-radius:50%}.hero-stamp small{position:absolute;bottom:38px;right:20px;font-size:8px;line-height:1.5;letter-spacing:2px;text-align:center}
 .hero-bottom{position:absolute;bottom:27px;left:12vw;right:12vw;display:flex;justify-content:space-between;color:#857780;font-size:8px;letter-spacing:2px}
 .section{padding:105px 12vw}.ranks-section{background:linear-gradient(180deg,rgba(14,11,16,.8),rgba(23,17,23,.92));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -394,3 +10,112 @@ h1,h2{font-family:var(--serif);font-weight:600;letter-spacing:2px;line-height:.8
 footer{padding:28px 12vw;display:flex;align-items:center;gap:14px;border-top:1px solid var(--line);color:#c7b9c1;font-size:10px;letter-spacing:2px}footer .brand-mark{font-size:26px}footer small{margin-left:auto;color:#746871;font-size:8px;letter-spacing:1.5px}
 @media(max-width:800px){.topbar{padding:0 5vw;height:72px}nav{display:none}.hero{padding:100px 8vw 70px;min-height:570px}.hero-stamp{right:8%;top:12%;width:125px;height:125px;opacity:.45}.hero-stamp>span{font-size:65px}.hero-stamp small{font-size:6px;bottom:20px;right:10px}.hero-bottom{left:8vw;right:8vw}.section{padding:75px 7vw}.section-heading{display:block}.section-heading>p{margin-top:20px}.rank-toggle{grid-template-columns:35px 1fr 20px;padding:17px 14px;gap:12px}.rank-status{display:none}.rank-content{padding:0 15px 20px 61px}.lore-section{grid-template-columns:1fr;gap:40px}.lore-image{min-height:280px}.lore-symbol{font-size:120px}.rules-grid{grid-template-columns:1fr}.rules-grid article{min-height:auto}footer{padding:25px 7vw;flex-wrap:wrap}footer small{width:100%;margin-left:40px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+
+/* ===== ФИКСИРОВАННЫЙ РАЗМЕР СТРАНИЦ И ЭФФЕКТЫ СТАРОЙ КНИГИ ===== */
+
+.book-pages {
+  position: relative;
+  height: 720px;
+  min-height: 720px;
+  max-height: 720px;
+  padding: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #e8d9b9;
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba(140, 91, 50, .12), transparent 45%),
+    radial-gradient(ellipse at 85% 80%, rgba(140, 91, 50, .13), transparent 45%),
+    repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(115, 86, 58, .08) 32px);
+}
+
+.book-pages .book-page {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 48px 8%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(117, 76, 57, .55) transparent;
+  display: none;
+  color: #35251f;
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(69, 35, 22, .24), transparent 19%),
+    radial-gradient(ellipse at 100% 100%, rgba(69, 35, 22, .22), transparent 20%),
+    radial-gradient(ellipse at 100% 0%, rgba(69, 35, 22, .13), transparent 13%),
+    radial-gradient(ellipse at 0% 100%, rgba(69, 35, 22, .14), transparent 15%);
+  box-shadow: inset 0 0 38px rgba(83, 47, 28, .18), inset 0 0 8px rgba(70, 35, 20, .22);
+  animation: pageAppear .45s ease;
+}
+
+.book-pages .book-page.active {
+  display: block;
+}
+
+.book-pages .book-page::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  inset: 0;
+  opacity: .7;
+  background:
+    linear-gradient(90deg, rgba(57, 31, 22, .27), transparent 5%, transparent 95%, rgba(57, 31, 22, .25)),
+    linear-gradient(180deg, rgba(57, 31, 22, .22), transparent 6%, transparent 94%, rgba(57, 31, 22, .24)),
+    radial-gradient(ellipse at 0% 0%, rgba(44, 24, 18, .45), transparent 15%),
+    radial-gradient(ellipse at 100% 0%, rgba(44, 24, 18, .35), transparent 13%),
+    radial-gradient(ellipse at 0% 100%, rgba(44, 24, 18, .38), transparent 14%),
+    radial-gradient(ellipse at 100% 100%, rgba(44, 24, 18, .46), transparent 16%);
+}
+
+.book-pages .book-page::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  inset: 0;
+  opacity: .48;
+  background:
+    radial-gradient(ellipse 35px 18px at 91% 17%, rgba(111, 25, 29, .28), transparent 75%),
+    radial-gradient(ellipse 14px 28px at 94% 21%, rgba(111, 25, 29, .2), transparent 75%),
+    radial-gradient(ellipse 28px 13px at 8% 82%, rgba(111, 25, 29, .2), transparent 75%),
+    radial-gradient(ellipse 9px 19px at 11% 85%, rgba(111, 25, 29, .18), transparent 75%);
+}
+
+.book-pages .book-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes pageAppear {
+  from {
+    opacity: 0;
+    transform: translateX(18px) rotateY(-2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+  }
+}
+
+@media (max-width: 650px) {
+  .book-pages {
+    height: 760px;
+    min-height: 760px;
+    max-height: 760px;
+  }
+
+  .book-pages .book-page {
+    padding: 30px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-pages .book-page {
+    animation: none;
+  }
+}
