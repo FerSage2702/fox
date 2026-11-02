@@ -29,6 +29,350 @@
   margin: 20px 0;
 }
 
+/* ===== КНИГА ЛИСЬИХ УГОДИЙ ===== */
+
+.lore-book-section {
+  display: block !important;
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+
+.book-heading {
+  text-align: center;
+  margin: 0 auto 42px;
+  max-width: 750px;
+}
+
+.book-heading .eyebrow {
+  justify-content: center;
+}
+
+.book-heading h2 {
+  margin: 14px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 58px);
+  letter-spacing: 2px;
+}
+
+.book-heading h2 em {
+  color: #c58b91;
+  font-style: normal;
+}
+
+.book-heading > p {
+  color: #aaa0a2;
+  font-size: 15px;
+}
+
+/* Переплёт */
+
+.book-shell {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px;
+  border: 1px solid rgba(183, 125, 99, .55);
+  border-radius: 8px 16px 16px 8px;
+
+  background:
+    linear-gradient(110deg, #261319, #421c25 48%, #271218);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, .55),
+    inset 5px 0 12px rgba(0, 0, 0, .5),
+    inset -2px 0 5px rgba(255, 220, 180, .08);
+}
+
+.book-shell::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  bottom: 12px;
+  width: 5px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    #10090c,
+    #8a4c4d,
+    #271218
+  );
+}
+
+.book-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 14px 18px 22px;
+  color: #d5a7a0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+
+.book-volume {
+  color: #9d7773;
+  font-size: 12px;
+}
+
+/* Страницы */
+
+.book-pages {
+  position: relative;
+  min-height: 650px;
+  padding: 48px 8%;
+  overflow: hidden;
+  border-radius: 3px;
+
+  background-color: #e8d9b9;
+  background-image:
+    radial-gradient(
+      ellipse at 15% 20%,
+      rgba(140, 91, 50, .12),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 85% 80%,
+      rgba(140, 91, 50, .13),
+      transparent 45%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 31px,
+      rgba(115, 86, 58, .08) 32px
+    );
+
+  box-shadow:
+    inset 0 0 35px rgba(94, 55, 29, .19),
+    0 4px 12px rgba(0, 0, 0, .3);
+}
+
+.book-page {
+  display: none;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #35251f;
+  animation: pageAppear .45s ease;
+}
+
+.book-page.active {
+  display: block;
+}
+
+@keyframes pageAppear {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.page-number {
+  text-align: right;
+  color: #94775b;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+}
+
+.page-chapter {
+  margin-top: 15px;
+  color: #96634f;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.book-page h3 {
+  margin: 12px 0 30px;
+  color: #40251f;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 43px);
+  font-weight: 700;
+  text-align: center;
+}
+
+.book-page p {
+  margin: 0 0 20px;
+  color: #403029;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.book-page p strong {
+  color: #812f37;
+}
+
+.book-page .page-quote {
+  margin: 20px auto 30px;
+  color: #873c42;
+  font-size: 25px;
+  font-style: italic;
+  text-align: center;
+}
+
+.page-ending {
+  margin-top: 35px;
+  color: #a18166;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+/* Финальная страница */
+
+.book-final {
+  margin: 40px auto;
+  padding: 25px 15px;
+  border-top: 1px solid rgba(112, 74, 52, .35);
+  border-bottom: 1px solid rgba(112, 74, 52, .35);
+  text-align: center;
+}
+
+.book-final > span {
+  display: block;
+  color: #8a333c;
+  font-size: 54px;
+  margin-bottom: 15px;
+}
+
+.book-final p {
+  color: #792e36;
+  font-size: 25px;
+  font-style: italic;
+  text-align: center;
+}
+
+.book-final small {
+  display: block;
+  max-width: 500px;
+  margin: 20px auto 0;
+  color: #795c4c;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Управление страницами */
+
+.book-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 22px 12px 10px;
+}
+
+.book-button {
+  padding: 12px 20px;
+  border: 1px solid rgba(205, 151, 139, .45);
+  border-radius: 3px;
+  background: rgba(12, 7, 10, .25);
+  color: #e0b8b1;
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.book-button:hover:not(:disabled) {
+  background: rgba(180, 92, 100, .25);
+  border-color: #c58b91;
+  color: #fff;
+}
+
+.book-button:disabled {
+  opacity: .3;
+  cursor: not-allowed;
+}
+
+.book-pagination {
+  color: #e0b8b1;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+}
+
+.pagination-divider {
+  margin: 0 8px;
+  color: #8f6464;
+}
+
+.book-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0 0;
+}
+
+.book-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 1px solid #b17c7b;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.book-dot.active {
+  background: #d49a9c;
+  box-shadow: 0 0 10px rgba(212, 154, 156, .5);
+  transform: scale(1.3);
+}
+
+/* Мобильная версия */
+
+@media (max-width: 650px) {
+  .lore-book-section {
+    padding-top: 55px;
+  }
+
+  .book-shell {
+    padding: 13px;
+  }
+
+  .book-pages {
+    min-height: 720px;
+    padding: 30px 22px;
+  }
+
+  .book-page p {
+    font-size: 19px;
+    line-height: 1.7;
+  }
+
+  .book-page .page-quote {
+    font-size: 22px;
+  }
+
+  .book-bottom {
+    gap: 8px;
+  }
+
+  .book-button {
+    padding: 11px 10px;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .book-top {
+    padding-left: 15px;
+    font-size: 12px;
+  }
+}
+
+
 .ambient{position:fixed;z-index:-2;width:420px;height:420px;border-radius:50%;filter:blur(120px);opacity:.13;pointer-events:none}.ambient-one{background:#a92d48;top:20%;right:-200px}.ambient-two{background:#6b4567;bottom:0;left:-250px}
 .topbar{height:86px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:rgba(13,10,15,.55);backdrop-filter:blur(16px);position:sticky;top:0;z-index:10}
 .brand{display:flex;align-items:center;gap:12px;color:var(--text);text-decoration:none}.brand-mark{font-family:var(--serif);font-size:35px;color:var(--red);line-height:1}.brand b{display:block;font-size:12px;letter-spacing:3px}.brand small{display:block;color:var(--muted);font-size:8px;letter-spacing:2px;margin-top:4px}
