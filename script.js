@@ -12,10 +12,36 @@ const ranks = [
     name: "Hofuma",
     sub: "ОБРЕТЕНИЕ ЛИСЬЕГО ОБЛИКА",
     tasks: [
-      "Добыть шерсть животных и с помощью магии крови создать собственный лисий хвост.",
-      "Истребить 10 истребителей демонов.",
-      "Подчинить одну территорию на карте."
+  "Добыть шерсть животных и с помощью магии крови создать собственный лисий хвост.",
+  "Получить позывной, соответствующий выбранной должности в Лисьих угодьях.",
+  "Истребить 10 истребителей демонов.",
+  "Подчинить одну территорию на карте."
+],
+    callsigns: [
+  {
+    position: "Первородный лис",
+    count: "[1|1]",
+    names: ["Ленивый лис."]
+  },
+  {
+    position: "Несущий холод лисьих угодий",
+    count: "[2|2]",
+    names: ["Добрый лис.", "Злой лис."]
+  },
+  {
+    position: "Белый лис лисьих угодий",
+    count: "[7|7]",
+    names: [
+      "Тревожный лис.",
+      "Радостный лис.",
+      "Безмятежный лис.",
+      "Огорчённый лис.",
+      "Скорбящий лис.",
+      "Завистливый лис.",
+      "Возмущённый лис."
     ]
+  }
+]
   },
   {
     name: "Chisuma",
@@ -241,7 +267,7 @@ ranks.forEach((rank, index) => {
 
   const number = document.createElement('span');
   number.className = 'rank-number';
-  number.textContent = String(index + 1).padStart(2, '0');
+  number.textContent = String(index + 2).padStart(2, '0');
 
   const nameWrap = document.createElement('span');
 
@@ -283,6 +309,34 @@ ranks.forEach((rank, index) => {
   (rank.groups || []).forEach((group, i) => {
     addGroup(index, group, i + 1, content);
   });
+  if (rank.callsigns) {
+  const callsignWrapper = document.createElement('div');
+  callsignWrapper.className = 'task-group callsign-list';
+
+  const callsignHeading = document.createElement('p');
+  callsignHeading.className = 'task-group-label';
+  callsignHeading.textContent = 'ДОЛЖНОСТИ И ПОЗЫВНЫЕ';
+
+  callsignWrapper.append(callsignHeading);
+
+  rank.callsigns.forEach(item => {
+    const position = document.createElement('p');
+    position.className = 'task-note';
+    position.textContent = `${item.position} ${item.count}`;
+
+    callsignWrapper.append(position);
+
+    item.names.forEach(callname => {
+      const name = document.createElement('p');
+      name.className = 'task-note';
+      name.textContent = `— ${callname}`;
+
+      callsignWrapper.append(name);
+    });
+  });
+
+  content.append(callsignWrapper);
+}
 
   toggle.addEventListener('click', () => {
     const open = card.classList.toggle('open');
