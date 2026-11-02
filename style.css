@@ -1287,3 +1287,69 @@ footer small {
         line-height: 1.75;
     }
 }
+/* ===== КНИГА БЕЗ ВНУТРЕННЕЙ ПРОКРУТКИ ===== */
+
+.book-pages {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+}
+
+/* Страницы больше не накладываются друг на друга */
+.book-pages .book-page {
+    position: relative !important;
+    inset: auto !important;
+
+    width: 100%;
+    height: auto !important;
+    min-height: 650px;
+
+    max-height: none !important;
+    overflow: visible !important;
+
+    padding: 55px 10% !important;
+    display: none;
+
+    transform: none;
+}
+
+/* Показываем только выбранную страницу */
+.book-pages .book-page.active {
+    display: block !important;
+    animation: foxPageAppear .45s ease;
+}
+
+/* Книга плавно появляется при перелистывании */
+@keyframes foxPageAppear {
+    from {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Текст */
+.book-pages .book-page p {
+    font-size: 22px;
+    line-height: 1.85;
+    margin-bottom: 24px;
+}
+
+/* Мобильная версия */
+@media (max-width: 650px) {
+    .book-pages .book-page {
+        min-height: 0;
+        padding: 35px 22px !important;
+    }
+
+    .book-pages .book-page p {
+        font-size: 19px;
+        line-height: 1.7;
+    }
+}
