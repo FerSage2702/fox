@@ -21,6 +21,13 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+.lore-quote {
+  color: #d6a0a8;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  margin: 20px 0;
+}
 
 .ambient{position:fixed;z-index:-2;width:420px;height:420px;border-radius:50%;filter:blur(120px);opacity:.13;pointer-events:none}.ambient-one{background:#a92d48;top:20%;right:-200px}.ambient-two{background:#6b4567;bottom:0;left:-250px}
 .topbar{height:86px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:rgba(13,10,15,.55);backdrop-filter:blur(16px);position:sticky;top:0;z-index:10}
